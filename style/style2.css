@@ -181,15 +181,15 @@ nav ul li button {
 
 
 main {
-    width: 100%; /* Establece el ancho del <main> al 100% del contenedor */
-    height: 74vh; /* Establece la altura del <main> al 60% del viewport height */
-    padding: 0; /* Elimina cualquier relleno interior del <main> */
-    margin: 0; /* Elimina cualquier margen exterior del <main> */
-    overflow: auto; /* Agrega desplazamiento vertical si el contenido excede la altura */
+    width: 100%; 
+    height: 74vh; 
+    padding: 0; 
+    margin: 0; 
+    overflow: auto; 
 }
 
 main img {
-    display: block; /* Hace que la imagen sea un bloque para ajustar el ancho */
-    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor <main> */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    display: block; 
+    width: 100%; 
+    height: auto;
 }

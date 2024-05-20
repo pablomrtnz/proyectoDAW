@@ -1,9 +1,27 @@
 <?php
 
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$asunto = $_POST['asunto'];
-$mensaje = $_POST['mensaje'];
+function sanitize_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
+$nombre = sanitize_input($_POST['nombre']);
+$email = sanitize_input($_POST['email']);
+$asunto = sanitize_input($_POST['asunto']);
+$mensaje = sanitize_input($_POST['mensaje']);
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $response = array(
+        'status' => 'error',
+        'message' => 'El correo electrónico no es válido.'
+    );
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
+}
+
+$nombre = str_replace(array("\r", "\n"), '', $nombre);
+$email = str_replace(array("\r", "\n"), '', $email);
+$asunto = str_replace(array("\r", "\n"), '', $asunto);
 
 $destinatario = 'pablo.mrtz@gmail.com'; 
 

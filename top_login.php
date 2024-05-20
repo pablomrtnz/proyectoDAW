@@ -11,30 +11,34 @@ if ($conn->connect_error) {
     die("Error en la conexión: " . $conn->connect_error);
 }
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+if ($stmt = $conn->prepare("SELECT user_id, user_name, user_admin FROM users WHERE user_username = ? AND user_password = ?")) {
+    $stmt->bind_param("ss", $username, $password);
 
-$sql = "SELECT * FROM users WHERE user_username='$username' AND user_password='$password'";
-$result = $conn->query($sql);
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-if (!$result) {
-    die("Error en la consulta: " . $conn->error);
-}
+    $stmt->execute();
 
-if ($result->num_rows == 1) {
-    $user = $result->fetch_assoc();
+    $result = $stmt->get_result();
 
-    session_start();
-    $_SESSION['user_id'] = $user['user_id'];
-    $_SESSION['user_name'] = $user['user_name'];
-    $_SESSION['user_admin'] = $user['user_admin'];
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
 
-    header("Location: members/socios.php");
-    exit();
-    
+        session_start();
+        $_SESSION['user_id'] = $user['user_id'];
+        $_SESSION['user_name'] = $user['user_name'];
+        $_SESSION['user_admin'] = $user['user_admin'];
+
+        header("Location: members/socios.php");
+        exit();
+    } else {
+        header("Location: login.php?error=1");
+        exit();
+    }
+
+    $stmt->close();
 } else {
-    header("Location: login.php?error=1");
-    exit();
+    die("Error en la preparación de la consulta: " . $conn->error);
 }
 
 $conn->close();

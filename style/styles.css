@@ -40,5 +40,5 @@ body {
 .footer {
   background-color: #eedb9a;
   padding: 20px;
-  margin-top: auto; /* Coloca el footer al final del cuerpo */
+  margin-top: auto;
 }
