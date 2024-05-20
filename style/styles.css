@@ -1,0 +1,44 @@
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+#accept-cookies-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#accept-cookies-btn:hover {
+  background-color: #0056b3;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #eedb9a;
+  padding: 20px;
+  margin-top: auto; /* Coloca el footer al final del cuerpo */
+}

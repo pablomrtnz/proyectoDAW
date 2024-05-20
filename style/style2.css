@@ -1,0 +1,195 @@
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.headerTop {
+    display: flex;
+    justify-content:space-between;
+    align-items: right;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+.rrss {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+
+}
+
+.rrss a{
+    margin-right: 20px;
+}
+
+
+.idiomas {
+    display: flex;
+    align-items: center;
+}
+
+.idiomas select {
+    color: rgb(255, 185, 33);
+    background: transparent;
+    border: 0;
+}
+
+.idiomas select option {
+    color: black;
+}
+
+.idiomas select,
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+
+nav ul li button {
+    background: transparent;
+    border: none;
+    color: rgb(255, 185, 33);
+    border-bottom: 2px solid rgb(255, 185, 33);;
+}
+
+.boton {
+    font-size: 12px;
+    display: inline-block;
+    background: transparent;
+    color: rgb(255, 185, 33);
+    text-decoration: none;
+    border: 1px solid rgb(255, 185, 33);
+    margin-right: 20px;
+    padding: 4px 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.boton:hover {
+    background-color: #ffffff;
+    color: rgb(255, 185, 33);
+}
+
+.headerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+}
+
+.sections {
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+}
+
+.sections ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sections ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.sections ul li a{
+    text-decoration: none;
+    color:black;
+    position: relative;
+    transition: color 0.3s;
+}
+
+
+.sections ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; 
+    left: 0;
+    width: 0;
+    border-bottom: 2px solid rgb(255, 185, 33); 
+    transition: width 0.3s; 
+}
+
+.sections ul li a:hover::after {
+    width: 100%; 
+}
+
+.footer {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer .sections {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer .sections ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .sections ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer .sections ul li a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.footer .sections ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    border-bottom: 2px solid rgb(255, 185, 33);
+    transition: width 0.3s;
+}
+
+.footer .sections ul li a:hover::after {
+    width: 100%;
+}
+
+.footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+main {
+    width: 100%; /* Establece el ancho del <main> al 100% del contenedor */
+    height: 74vh; /* Establece la altura del <main> al 60% del viewport height */
+    padding: 0; /* Elimina cualquier relleno interior del <main> */
+    margin: 0; /* Elimina cualquier margen exterior del <main> */
+    overflow: auto; /* Agrega desplazamiento vertical si el contenido excede la altura */
+}
+
+main img {
+    display: block; /* Hace que la imagen sea un bloque para ajustar el ancho */
+    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor <main> */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+}
