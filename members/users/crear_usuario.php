@@ -25,9 +25,7 @@ if ($data) {
     }
 
     $sql = "INSERT INTO users (user_name, user_username, user_password, user_admin) VALUES (?, ?, ?, ?)";
-
     $stmt = $conn->prepare($sql);
-
     $stmt->bind_param("sssi", $user_name, $user_username, $user_password, $user_admin);
 
     if ($stmt->execute()) {

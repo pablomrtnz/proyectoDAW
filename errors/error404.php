@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-10">
-            <p class="mb-4">Si estas leyendo esto te informamos que deeberias de revisar la url, puede que la hayas escrito mal.</p>
+            <p class="mb-4">Si estas leyendo esto te informamos que deberias de revisar la url, puede que la hayas escrito mal.</p>
             <p class="text-center"><strong>¡Si sigues notando problemas, no dudes en contactar con nosotros!</strong></p>
         </div>
     </div>
